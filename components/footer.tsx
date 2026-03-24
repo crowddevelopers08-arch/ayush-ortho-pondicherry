@@ -16,7 +16,7 @@ export function Footer() {
 
     <footer className="bg-black border-t border-primary/20"style={{fontFamily: "'Outfit', sans-serif"}}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-[426px]:py-5 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-[426px]:gap-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-[426px]:gap-4 gap-4">
           {/* Clinic Info */}
           <div className="space-y-6">
              <img  className="w-[170px] h-[60px] max-[768px]:w-[150px] max-[768px]:h-[50px] max-[480px]:w-[120px] max-[480px]:h-[40px]" src="https://ik.imagekit.io/aegfxmf0u/public/ayushhhhh.png" alt="logo" />
@@ -69,16 +69,16 @@ export function Footer() {
               <div className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-[#e13e20] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300 max-[426px]:text-[16px]">ayushorthoambattur@gmail.com</p>
+                  <p className="text-gray-300 max-[426px]:text-[16px]">ayushorthopondy@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-[#e13e20] mt-1 flex-shrink-0" />
                 <p className="text-gray-300 max-[426px]:text-[16px]">
-                  2ND Floor, 122/124/1, Vijayalakshmipuram,
+                  C Block, Lakshmi Homes, Mariamman Koil St,
                   <br />
-                  Redhills Road, Ambattur, Chennai
+                  Vinoba nagar, Saram, Puducherry, Tamil Nadu 605008
                 </p>
               </div>
             </div>

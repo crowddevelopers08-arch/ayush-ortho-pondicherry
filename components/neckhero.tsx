@@ -355,7 +355,7 @@ export function Neckhero() {
           <div className="text-white space-y-5 md:space-y-6 order-1 lg:order-1">
             <h1 className="text-[40px] max-[470px]:text-[24px] max-[470px]:pt-[20px] max-[470px]:text-center sm:text-4xl md:text-5xl lg:text-[40px] font-bold leading-tight">
               Shoulder & Neck Pain Relief at Ayush Ortho 
-              <span className="text-[#e13e20]"> – Ambattur, Chennai</span>
+              <span className="text-[#e13e20]"> – Puducherry</span>
             </h1>
             <div className="bg-gray-800 p-4 rounded-lg mb-6 max-[470px]:mb-10">
               <p className="text-gray-300 italic  max-[470px]:text-center">

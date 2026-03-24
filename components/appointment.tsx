@@ -42,7 +42,7 @@ const AppointmentBanner: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <p className="text-base md:text-lg">2ND Floor, 122/124/1, Vijayalakshmipuram, Redhills Road, Ambattur, Chennai</p>
+                <p className="text-base md:text-lg">C Block, Lakshmi Homes, Mariamman Koil St, Vinoba nagar, Saram, Puducherry, Tamil Nadu 605008</p>
               </div>
               
               <div className="flex items-center justify-center lg:justify-start">

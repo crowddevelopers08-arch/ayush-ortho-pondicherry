@@ -181,7 +181,7 @@ const ScannerForm: React.FC = () => {
           <div className="text-center mb-6">
             <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 text-orange-500 text-xs font-semibold px-3 py-1 rounded-full mb-3 tracking-wide uppercase">
               <span className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-pulse"></span>
-              Ayush Ortho — Ambattur
+              Ayush Ortho — Puducherry
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-800 leading-tight">
               Relief from{" "}
@@ -306,8 +306,8 @@ const ScannerForm: React.FC = () => {
               {/* Address */}
               <div className="mt-5 pt-4 border-t border-orange-100 text-center space-y-1">
                 <p className="text-gray-500 text-xs leading-relaxed">
-                  📍 AYUSH ORTHO, 2nd Floor, 122/124/1, Vijayalakshmipuram,<br />
-                  Redhills Road, Ambattur, Chennai - 600053
+                  📍 AYUSH ORTHO, C Block, Lakshmi Homes, Mariamman Koil St,<br />
+                  Vinoba nagar, Saram, Puducherry, Tamil Nadu 605008
                 </p>
                 <p className="text-gray-500 text-xs">
                   📞 <a href="tel:+919514417318" className="text-orange-500 font-medium">+91 95144 17318</a>

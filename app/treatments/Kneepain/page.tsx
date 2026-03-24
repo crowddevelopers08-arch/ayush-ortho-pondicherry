@@ -29,7 +29,7 @@ export default function HomePage() {
       <KneePainTreatment />
       <KneePainReliefCards />
       <section id="reviews">
-        <Kneevideo />
+        {/* <Kneevideo /> */}
       <PatientSuccessStories />
       </section>
       <section id="contacts">

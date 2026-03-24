@@ -74,7 +74,7 @@ const BackcombinedComponent: React.FC = () => {
                     <div className="w-5 h-5 sm:w-6 sm:h-6 mr-3 flex-shrink-0 text-[#e13e20]">
                       <MapPin className="w-full h-full" />
                     </div>
-                    <p className="text-sm sm:text-base md:text-lg">2nd Floor, 122/124/1, Vijayalakshmipuram, Redhills Road, Ambattur, Chennai - 600053</p>
+                    <p className="text-sm sm:text-base md:text-lg">C Block, Lakshmi Homes, Mariamman Koil St, Vinoba nagar, Saram, Puducherry, Tamil Nadu 605008</p>
                   </div>
 {/*                   
                   <div className="flex items-center justify-center">

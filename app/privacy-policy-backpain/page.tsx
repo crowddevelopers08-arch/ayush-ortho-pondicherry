@@ -103,7 +103,7 @@ const PrivacyPolicyknee: React.FC = () => {
                 <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 </div>
-                Schedule and manage your appointments at our East Tambaram clinic.
+                Schedule and manage your appointments at our puducherry clinic.
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
@@ -216,7 +216,7 @@ const PrivacyPolicyknee: React.FC = () => {
                 <div className="bg-[#e13e20] p-2 rounded-full">
                   <MapPin className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-gray-700">2nd Floor, 122/124/1, Vijayalakshmipuram, Redhills Road, Ambattur, Chennai - 600053</span>
+                <span className="text-gray-700">C Block, Lakshmi Homes, Mariamman Koil St, Vinoba nagar, Saram, Puducherry, Tamil Nadu 605008</span>
               </div>
               
               <div className="flex items-center gap-3">

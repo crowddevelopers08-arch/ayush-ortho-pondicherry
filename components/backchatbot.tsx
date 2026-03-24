@@ -269,11 +269,11 @@ export default function Backchatbot() {
       if (lowerMessage.includes('pain') || lowerMessage.includes('back') || lowerMessage.includes('spine')) {
         botResponse = 'I understand you\'re dealing with back pain. Our specialists treat various conditions including sciatica, herniated discs, scoliosis, and chronic back pain using non-surgical Ayurvedic methods. Would you like to book a consultation?';
       } else if (lowerMessage.includes('appointment') || lowerMessage.includes('book')) {
-        botResponse = 'To book an appointment, please call +91 95144 17318. We\'re available daily from 10 AM to 8 PM. You can also visit us directly at our Ambattur clinic.';
+        botResponse = 'To book an appointment, please call +91 95144 17318. We\'re available daily from 10 AM to 8 PM. You can also visit us directly at our Puducherry clinic.';
       } else if (lowerMessage.includes('cost') || lowerMessage.includes('price')) {
         botResponse = 'Our treatment plans are competitively priced. We offer special discounts for seniors (free consultation on Thursdays) and defense families (15% off). Please call for detailed pricing.';
       } else if (lowerMessage.includes('location') || lowerMessage.includes('address')) {
-        botResponse = 'We\'re located at 2ND Floor, 122/124/1, Vijayalakshmipuram, Redhills Road, Ambattur, Chennai. We\'re open daily from 10 AM to 8 PM.';
+        botResponse = 'We\'re located at C Block, Lakshmi Homes, Mariamman Koil St, Vinoba nagar, Saram, Puducherry, Tamil Nadu 605008. We\'re open daily from 10 AM to 8 PM.';
       } else if (lowerMessage.includes('time') || lowerMessage.includes('hour')) {
         botResponse = 'Our clinic is open daily from 10 AM to 8 PM. We\'re here to help you with your back pain concerns.';
       } else if (lowerMessage.includes('treatment') || lowerMessage.includes('plan')) {

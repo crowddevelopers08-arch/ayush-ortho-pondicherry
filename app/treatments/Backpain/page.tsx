@@ -29,7 +29,7 @@ export default function HomePage() {
         <Backsix />
         <Backcenterimg />
    <WhatSetsUsApart />
-    <Backvideo />
+    {/* <Backvideo /> */}
       <section id="reviews">
       <Backreviews />
       </section>

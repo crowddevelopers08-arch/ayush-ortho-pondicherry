@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
           <div className="w-full text-center lg:text-left space-y-4 sm:space-y-5 md:space-y-6 max-w-3xl mx-auto lg:mx-0">
             {/* Location */}
             <p className="text-xs sm:text-sm md:text-base font-medium text-black/80 mb-2">
-              Ayush Ortho – Ambattur, Chennai
+              Ayush Ortho – Puducherry
             </p>
 
             {/* Main Heading */}

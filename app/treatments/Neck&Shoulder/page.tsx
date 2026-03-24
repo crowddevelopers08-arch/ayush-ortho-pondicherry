@@ -25,7 +25,7 @@ export default function HomePage() {
       <Neckfive />
       <Necksix />
       <Neckfour />
-      <Neckvideo />
+      {/* <Neckvideo /> */}
       <Neckreviews />
       <NeckcombinedComponent />
       <Neckfooter />

@@ -25,7 +25,7 @@ const AyushOrtho = () => {
                         {/* Content Section */}
                         <div className="lg:w-1/2 w-full">
                             <h2 className="text-[42px] max-[470px]:text-[22px] max-[470px]:text-center max-[470px]:mb-3 mb-6 font-bold text-white leading-tight">
-                                Knee Pain Relief at <span className="text-orange-500">Ayush Ortho </span>– Ambattur, Chennai
+                                Knee Pain Relief at <span className="text-orange-500">Ayush Ortho </span>– Puducherry
                             </h2>
                             
                             <div className="bg-gray-800 p-4 rounded-lg mb-6 max-[470px]:mb-10">

@@ -32,9 +32,9 @@ export default function HomePage() {
       <section id="reviews">
       <Commontestimonials /> 
       </section>
-      <section id="testimonials">
+      {/* <section id="testimonials">
       <Commonvideo /> 
-      </section>
+      </section> */}
       <Commonchatbot />
       <Commonmap />
     </main>

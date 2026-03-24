@@ -103,7 +103,7 @@ const ThankYouPageknee: React.FC = () => {
         {/* Location */}
         <div className="flex items-center gap-2 text-gray-400 mb-2">
           <MapPin className="w-4 h-4" />
-          <span>2ND Floor, 122/124/1, Vijayalakshmipuram, Redhills Road, Ambattur, Chennai</span>
+          <span>C Block, Lakshmi Homes, Mariamman Koil St, Vinoba nagar, Saram, Puducherry, Tamil Nadu 605008</span>
         </div>
 
         {/* Timing */}

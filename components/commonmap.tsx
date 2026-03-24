@@ -174,9 +174,9 @@ const Commonmap: React.FC = () => {
               <MapPin className="w-4 h-4 text-white" />
             </div>
             <span className="text-sm text-white text-center md:text-base leading-relaxed">
-              AYUSH ORTHO, 2nd Floor, 122/124/1, Vijayalakshmipuram, 
+              AYUSH ORTHO, C Block, Lakshmi Homes, Mariamman Koil St,
               <br className="hidden sm:block" />
-              Redhills Road, Ambattur, Chennai - 600053
+              Vinoba nagar, Saram, Puducherry, Tamil Nadu 605008
             </span>
           </div>
         </div>
