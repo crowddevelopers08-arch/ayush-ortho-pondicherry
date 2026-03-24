@@ -104,7 +104,7 @@ const Commonfour: React.FC = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 gap-6 max-[470px]:gap-4 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
           {/* Card 1 */}
           <div className="bg-[#fdeceb] rounded-2xl sm:rounded-3xl lg:rounded-4xl p-4 sm:p-5 md:p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
             <h3 className="font-semibold text-base sm:text-lg md:text-xl lg:text-[20px] mb-3 sm:mb-4 px-2">
