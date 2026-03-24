@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useState } from 'react';// Adjust the import path as needed
 import { ConsultationModal } from './popupform';
 
@@ -103,7 +103,7 @@ const AyushOrtho = () => {
 
                             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
                                 <a
-                                    href="tel:+919514417318"
+                                    href="tel:+917397674330"
                                     className="bg-[#e13e20] text-white text-center font-semibold py-3 px-8 rounded-full transition-colors"
                                     style={{ backgroundColor: '#e13e20' }}
                                 >

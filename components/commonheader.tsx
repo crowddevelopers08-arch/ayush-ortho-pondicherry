@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React from 'react';
 import { Phone } from 'lucide-react';
 
@@ -100,12 +100,12 @@ export default function Commonheader() {
         {/* Contact Button */}
         <div className="flex-shrink-0">
           <a
-            href="tel:+919514417318"
+            href="tel:+917397674330"
             className="shiny-button"
           >
             <Phone size={18} className="text-white w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="hidden xs:inline">+91 95144 17318</span>
-            <span className="xs:hidden">+91 95144 17318</span>
+            <span className="hidden xs:inline">+91 73976 74330</span>
+            <span className="xs:hidden">+91 73976 74330</span>
           </a>
         </div>
       </header>

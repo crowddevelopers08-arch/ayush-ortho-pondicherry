@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, Phone, Calendar, MapPin, Clock } from 'lucide-react';
 
@@ -234,7 +234,7 @@ export default function Neckchatbot() {
       console.error('Booking submission error:', error);
       setMessages(prev => [...prev, 
         { type: 'bot', message: 'Thank you for your booking details! Our team will contact you shortly at ' + bookingData.phone + ' to confirm your appointment.', timestamp: new Date() },
-        { type: 'bot', message: 'If you have any questions, feel free to call us directly at +91 95144 17318.', timestamp: new Date() }
+        { type: 'bot', message: 'If you have any questions, feel free to call us directly at +91 73976 74330.', timestamp: new Date() }
       ]);
     } finally {
       setBookingFlow(false);
@@ -271,7 +271,7 @@ export default function Neckchatbot() {
       if (lowerMessage.includes('pain') || lowerMessage.includes('knee') || lowerMessage.includes('joint')) {
         botResponse = 'I understand you\'re dealing with pain. Our specialists treat various conditions including arthritis, ligament tears, and chronic pain using non-surgical Ayurvedic methods. Would you like to book a consultation?';
       } else if (lowerMessage.includes('appointment') || lowerMessage.includes('book')) {
-        botResponse = 'To book an appointment, please call +91 95144 17318. We\'re available daily from 10 AM to 8 PM. You can also visit us directly at our Puducherry clinic.';
+        botResponse = 'To book an appointment, please call +91 73976 74330. We\'re available daily from 10 AM to 8 PM. You can also visit us directly at our Puducherry clinic.';
       } else if (lowerMessage.includes('cost') || lowerMessage.includes('price')) {
         botResponse = 'Our treatment plans are competitively priced. We offer special discounts for seniors (free consultation on Thursdays) and defense families (15% off). Please call for detailed pricing.';
       } else if (lowerMessage.includes('location') || lowerMessage.includes('address')) {
@@ -281,7 +281,7 @@ export default function Neckchatbot() {
       } else if (lowerMessage.includes('treatment') || lowerMessage.includes('plan')) {
         botResponse = 'We offer 3 treatment plans: 7-Day Plan (for early-stage issues), 14-Day Plan (for moderate pain), and 21-Day Plan (for chronic conditions). All plans use non-surgical Ayurveda, Varma Therapy, and Chiropractic Care.';
       } else {
-        botResponse = 'Thank you for your message! For specific medical queries, I recommend speaking directly with our specialists. You can call +91 95144 17318 or book an appointment.';
+        botResponse = 'Thank you for your message! For specific medical queries, I recommend speaking directly with our specialists. You can call +91 73976 74330 or book an appointment.';
       }
 
       setMessages(prev => [...prev, { type: 'bot', message: botResponse, timestamp: new Date() }]);

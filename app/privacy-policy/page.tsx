@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { Phone, Shield, Lock, Eye, Mail, MapPin } from "lucide-react";
@@ -210,7 +210,7 @@ const PrivacyPolicy: React.FC = () => {
                 <div className="bg-[#e13e20] p-2 rounded-full">
                   <Phone className="w-4 h-4 text-white" />
                 </div>
-                <span className="font-semibold text-black">+91 95144 17318</span>
+                <span className="font-semibold text-black">+91 73976 74330</span>
               </div>
               
               <div className="flex items-center gap-3 mb-3">

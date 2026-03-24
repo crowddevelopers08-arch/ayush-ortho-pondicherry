@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
@@ -452,7 +452,7 @@ export function Neckhero() {
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
               <a 
-                href="tel:+919514417318"
+                href="tel:+917397674330"
                 className="btn-animation flex items-center justify-center bg-[#e13e20] hover:bg-[#c03518] text-white font-medium py-3 px-5 sm:px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />

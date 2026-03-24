@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter } from "lucide-react"
@@ -62,7 +62,7 @@ export function Footer() {
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-[#e13e20] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300 max-[426px]:text-[16px]">+91 95144 17318</p>
+                  <p className="text-gray-300 max-[426px]:text-[16px]">+91 73976 74330</p>
                 </div>
               </div>
 
@@ -116,7 +116,7 @@ export function Footer() {
       </div>
 
 <div className="max-[470px]:flex hidden fixed bottom-0 left-0 right-0 z-50 w-full">
-  <a href="tel:+919514417318" className="flex-1 flex items-center justify-center gap-2 py-4 bg-[#e13e20] text-white font-bold text-base transition-all duration-300 hover:bg-[#c1341a] active:translate-y-px">
+  <a href="tel:+917397674330" className="flex-1 flex items-center justify-center gap-2 py-4 bg-[#e13e20] text-white font-bold text-base transition-all duration-300 hover:bg-[#c1341a] active:translate-y-px">
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white">
       <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
     </svg>

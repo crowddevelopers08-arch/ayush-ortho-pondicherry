@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useState, useRef, useEffect } from 'react';
 import { MapPin, Phone, Clock } from 'lucide-react';
 import { NeckConsultationModal } from './neckpopup';
@@ -9,7 +9,7 @@ const NeckcombinedComponent: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleCall = () => {
-    window.location.href = 'tel:+919514417318';
+    window.location.href = 'tel:+917397674330';
   };
 
   const handleOpenModal = () => {
@@ -81,7 +81,7 @@ const NeckcombinedComponent: React.FC = () => {
                     <div className="w-5 h-5 sm:w-6 sm:h-6 mr-3 flex-shrink-0 text-[#e13e20]">
                       <Phone className="w-full h-full" />
                     </div>
-                    <p className="text-sm sm:text-base md:text-lg">Call Now: +91 95144 17318</p>
+                    <p className="text-sm sm:text-base md:text-lg">Call Now: +91 73976 74330</p>
                   </div>
                   
                   <div className="flex items-center justify-center">
@@ -107,7 +107,7 @@ const NeckcombinedComponent: React.FC = () => {
                   className="w-full flex items-center justify-center text-white border-2 border-[#e13e20] hover:bg-[#e13e20] font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#e13e20] focus:ring-opacity-50 text-sm sm:text-base md:text-lg"
                 >
                   <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-                  Call Now: +91 95144 17318
+                  Call Now: +91 73976 74330
                 </button>
                 
                 {/* Additional info */}

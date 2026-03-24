@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { Menu, X, Phone } from "lucide-react"
 
@@ -42,11 +42,11 @@ export function Thankheader() {
             <div className="flex items-center space-x-4">
               {/* Call button - always visible */}
               <a 
-                href="tel:+919514417318"
+                href="tel:+917397674330"
                 className="btn-animation flex items-center justify-center bg-[#e13e20] hover:bg-[#c03518] text-white font-medium py-2 px-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                <span className="font-semibold text-[14px] hidden sm:inline">+91 95144 17318</span>
+                <span className="font-semibold text-[14px] hidden sm:inline">+91 73976 74330</span>
                 <span className="font-semibold text-[16px] sm:hidden">Call Now</span>
               </a>
 

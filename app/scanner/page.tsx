@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import ScannerForm from "@/components/scannercp";
 
 export default function ScannerPage() {
@@ -21,7 +21,7 @@ export default function ScannerPage() {
 
           {/* Call CTA */}
           <a
-            href="tel:+919514417318"
+            href="tel:+917397674330"
             className="flex items-center gap-2 bg-[#e13e20] hover:bg-[#c1341a] text-white font-semibold text-sm sm:text-base px-4 sm:px-5 py-2.5 rounded-full transition-colors shadow-md"
           >
             <svg
@@ -38,7 +38,7 @@ export default function ScannerPage() {
                 d="M3 5.5C3 14.06 9.94 21 18.5 21h1a1.5 1.5 0 001.5-1.5v-2.75a1.5 1.5 0 00-1.03-1.43l-2.76-.92a1.5 1.5 0 00-1.57.4l-.92.92a11.03 11.03 0 01-5.35-5.35l.92-.92a1.5 1.5 0 00.4-1.57l-.92-2.76A1.5 1.5 0 008.25 3H5.5A1.5 1.5 0 004 4.5"
               />
             </svg>
-            +91 95144 17318
+            +91 73976 74330
           </a>
         </div>
       </header>

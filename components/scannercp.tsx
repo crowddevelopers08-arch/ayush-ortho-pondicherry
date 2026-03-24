@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -310,7 +310,7 @@ const ScannerForm: React.FC = () => {
                   Vinoba nagar, Saram, Puducherry, Tamil Nadu 605008
                 </p>
                 <p className="text-gray-500 text-xs">
-                  📞 <a href="tel:+919514417318" className="text-orange-500 font-medium">+91 95144 17318</a>
+                  📞 <a href="tel:+917397674330" className="text-orange-500 font-medium">+91 73976 74330</a>
                 </p>
               </div>
             </form>

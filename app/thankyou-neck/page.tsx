@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect } from "react";
 import { CheckCircle, Home, Phone, Calendar, MapPin } from "lucide-react";
@@ -79,7 +79,7 @@ const ThankYouPageknee: React.FC = () => {
         {/* Contact Information */}
         <div className="flex flex-col sm:flex-row gap-4 mb-8">
           <a
-            href="tel:+9195144 17318"
+            href="tel:+917397674330"
             className="inline-flex items-center gap-2 bg-[#e13e20] text-white px-6 py-3 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg"
           >
             <Phone className="w-5 h-5" />
