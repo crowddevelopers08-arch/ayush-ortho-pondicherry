@@ -252,14 +252,14 @@ const StackedScrollCards: React.FC = () => {
           <div
             key={card.id}
             ref={el => addCardRef(el, index)}
-            className="absolute inset-0 flex items-center justify-center p-3 xs:p-4 sm:p-6 md:p-8 pt-16"
+            className="absolute inset-0 flex items-center justify-center p-3 xs:p-4 sm:p-6 md:p-8 max-[470px]:pt-0 pt-16"
             aria-hidden={index !== activeCard}
             style={{ 
               zIndex: cardsData.length - index,
               visibility: index === activeCard ? 'visible' : 'hidden'
             }}
           >
-            <div className="w-full max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto px-2 xs:px-4 sm:px-6 lg:px-8">
+            <div className="w-full max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto px-2 xs:px-4 sm:px-6 max-[470px]:px-0 lg:px-8 max-[470px]:max-w-2xl">
                  <div className="py-4 px-4 sm:px-6 lg:px-8">
         <h2 
           ref={headingRef}
