@@ -34,7 +34,7 @@ export function Thankheader() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <img className="w-[160px] h-[60px] max-[768px]:w-[150px] max-[768px]:h-[50px] max-[480px]:w-[120px] max-[480px]:h-[40px]" src="ayushlogo.webp" alt="logo" />
+              <img className="w-[160px] h-[60px] max-[768px]:w-[150px] max-[768px]:h-[50px] max-[480px]:w-[120px] max-[480px]:h-[40px]" src="https://ik.imagekit.io/aegfxmf0u/public/ayushhhhh.png" alt="logo" />
             </div>
 
 

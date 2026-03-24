@@ -244,3 +244,5 @@ const PrivacyPolicyknee: React.FC = () => {
 };
 
 export default PrivacyPolicyknee;
+
+

@@ -62,7 +62,7 @@ const ClientFeedback = () => {
           <div className="mb-4 sm:mb-6 md:mb-8 flex justify-center">
             <div className="w-32 h-16 sm:w-36 sm:h-18 md:w-40 md:h-20 lg:w-44 lg:h-22 bg-gray-100 flex items-center justify-center overflow-hidden rounded-lg">
               <img 
-                src="/ayushlogo.webp" 
+                src="https://ik.imagekit.io/aegfxmf0u/public/ayushhhhh.png" 
                 alt="Company Logo" 
                 className="w-full h-full object-contain p-1 sm:p-2"
               />

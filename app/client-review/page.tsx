@@ -15,7 +15,7 @@ const Review = () => {
           <div className="mb-4 sm:mb-6 lg:mb-8 flex justify-center">
             <div className="w-40 h-20 sm:w-48 sm:h-24 md:w-56 md:h-28 lg:w-64 lg:h-32 bg-gray-100 flex items-center justify-center overflow-hidden rounded-lg">
               <img 
-                src="/ayushlogo.webp" 
+                src="https://ik.imagekit.io/aegfxmf0u/public/ayushhhhh.png" 
                 alt="Company Logo" 
                 className="w-full h-full object-contain p-2"
               />
