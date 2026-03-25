@@ -8,21 +8,21 @@ const Commontestimonials: React.FC = () => {
         "I was struggling with knee pain for over a year. Doctors recommended surgery. Ayush Ortho helped me recover completely with a 14-day plan — no surgery needed.",
       name: "Revathi M",
       age: 48,
-      location: "Mogappair",
+      location: "Auroville",
     },
     {
       quote:
         "Back pain from work-from-home was ruining my focus. Within 7 sessions at Ayush Ortho, posture therapy changed everything. Pain's gone.",
       name: "Anand R",
       age: 36,
-      location: "Avadi",
+      location: "Cuddalore",
     },
     {
       quote:
         "I had tried multiple clinics for shoulder pain. Their 21-day plan combining Varma + Ayurveda worked wonders. No pills. No injections.",
       name: "Surendar K",
       age: 42,
-      location: "Anna Nagar",
+      location: "Chidambaram",
     },
   ];
 
