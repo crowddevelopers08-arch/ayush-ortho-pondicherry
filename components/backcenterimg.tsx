@@ -98,7 +98,7 @@ const Backcenterimg: React.FC = () => {
               
               <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] p-3 sm:p-4">
                 <img 
-                  src="/IMG_6957.png" 
+                  src="/ai.png" 
                   alt="Knee Pain Treatment" 
                   className="w-full h-full object-cover rounded-md shadow-inner"
                 />

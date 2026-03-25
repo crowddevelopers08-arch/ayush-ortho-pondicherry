@@ -98,7 +98,7 @@ const KneePainTreatment: React.FC = () => {
             >
               <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#e13e20] to-orange-400">
                 <img 
-                  src="/IMG_6957.png" 
+                  src="/ai.png" 
                   alt="Knee Pain Treatment" 
                   className="w-56 h-56 sm:w-72 sm:h-72 lg:w-84 lg:h-84 object-cover rounded-full"
                 />
