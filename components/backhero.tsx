@@ -156,7 +156,7 @@ export function Backhero() {
     
 
       {/* Hero Section with Updated Content and Circular Design */}
-      <section className="pt-16 min-h-[80vh] md:pt-24 lg:pt-32 pb-12 md:pb-16 lg:pb-20 bg-gradient-to-b from-gray-900 to-black px-4 sm:px-6 lg:px-8"style={{fontFamily: "'Outfit', sans-serif" }}>
+      <section className="pt-16 min-h-[80vh] md:pt-24 lg:pt-32 pb-12 md:pb-16 lg:pb-20 bg-gradient-to-b from-gray-900 to-black px-4 sm:px-6 lg:px-8 overflow-x-hidden"style={{fontFamily: "'Outfit', sans-serif" }}>
         <div className="container mx-auto flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-8 lg:gap-12 items-center">
           {/* Content Section - Appears FIRST on mobile */}
           <div className="text-white space-y-5 md:space-y-6 order-1 md:order-1">

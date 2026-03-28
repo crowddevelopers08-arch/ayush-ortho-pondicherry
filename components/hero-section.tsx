@@ -10,7 +10,7 @@ const AyushOrtho = () => {
           <style jsx global>{`
       @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
       `}</style>
-        <div className="relative bg-gradient-to-b from-gray-900 pt-[75px] to-black overflow-hidden" style={{fontFamily: "'Outfit', sans-serif" }}>
+        <div className="relative bg-gradient-to-b from-gray-900 pt-[75px] to-black overflow-hidden overflow-x-hidden" style={{fontFamily: "'Outfit', sans-serif" }}>
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
                 <div className="absolute inset-0" style={{

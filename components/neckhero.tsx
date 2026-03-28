@@ -349,7 +349,7 @@ export function Neckhero() {
       `}</style>
 
       {/* Hero Section with Marquee Animation */}
-      <section className="pt-16 min-h-[80vh] md:pt-24 lg:pt-32 pb-12 md:pb-16 lg:pb-20 bg-gradient-to-b from-gray-900 to-black px-4 sm:px-6 lg:px-8" style={{fontFamily: "'Outfit', sans-serif" }}>
+      <section className="pt-16 min-h-[80vh] md:pt-24 lg:pt-32 pb-12 md:pb-16 lg:pb-20 bg-gradient-to-b from-gray-900 to-black px-4 sm:px-6 lg:px-8 overflow-x-hidden" style={{fontFamily: "'Outfit', sans-serif" }}>
         <div className="container mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-10 md:gap-8 lg:gap-12 items-center">
           {/* Content Section */}
           <div className="text-white space-y-5 md:space-y-6 order-1 lg:order-1">
