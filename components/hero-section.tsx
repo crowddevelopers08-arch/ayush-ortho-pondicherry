@@ -38,11 +38,9 @@ const AyushOrtho = () => {
                             <div className="lg:hidden w-full flex justify-center mb-6">
                                 <div className="relative w-full max-w-md">
                                     <div className="absolute -inset-3 bg-orange-500 rounded-2xl opacity-30 blur"></div>
-                                    <img 
-                                        src="https://ik.imagekit.io/aegfxmf0u/public/knneeeban.jpg" 
-                                        alt="Orthopedic treatment" 
-                                        className="relative rounded-2xl shadow-2xl w-full h-64 object-cover"
-                                    />
+                                    <video autoPlay loop muted playsInline className="relative rounded-2xl shadow-2xl w-full h-64 object-cover">
+                                      <source src="/knee%20pain.mov" type="video/mp4" />
+                                    </video>
                                 </div>
                             </div>
                             
@@ -126,11 +124,9 @@ const AyushOrtho = () => {
                         <div className="hidden lg:block lg:w-1/2 w-full flex justify-center lg:pr-0">
                             <div className="relative w-full">
                                 <div className="absolute -inset-4 bg-orange-500 rounded-2xl opacity-30 blur"></div>
-                                <img
-                                    src="https://ik.imagekit.io/aegfxmf0u/public/knneeeban.jpg"
-                                    alt="Orthopedic treatment"
-                                    className="relative rounded-2xl shadow-2xl w-full h-[28rem] object-cover"
-                                />
+                                <video autoPlay loop muted playsInline className="relative rounded-2xl shadow-2xl w-full h-[28rem] object-cover">
+                                  <source src="/knee%20pain.mov" type="video/mp4" />
+                                </video>
                             </div>
                         </div>
                     </div>

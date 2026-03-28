@@ -174,13 +174,11 @@ export function Backhero() {
   <div className="floating-element relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[500px] xl:h-[500px] mx-auto">
     {/* Main circular image */}
     <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
-      <img 
-        src="https://ik.imagekit.io/aegfxmf0u/public/backban.webp" 
-        alt="Back pain treatment" 
-        className="w-full h-full object-cover"
-      />
+      <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+        <source src="/back%20pain.mov" type="video/mp4" />
+      </video>
     </div>
-    
+
     {/* Floating circular element 1 */}
     <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 md:-top-2 md:-right-2 lg:top-4 lg:right-2 bg-[#e13e20] rounded-full w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 flex items-center justify-center shadow-xl floating-element" style={{animationDelay: '1s'}}>
       <div className="text-white text-center">
@@ -261,11 +259,9 @@ export function Backhero() {
             <div className="floating-element relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[500px] xl:h-[500px] mx-auto">
               {/* Main circular image */}
               <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
-                <img 
-                  src="https://ik.imagekit.io/aegfxmf0u/public/backban.webp" 
-                  alt="Back pain treatment" 
-                  className="w-full h-full object-cover"
-                />
+                <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+                  <source src="/back%20pain.mov" type="video/mp4" />
+                </video>
               </div>
               
               {/* Floating circular element 1 */}
