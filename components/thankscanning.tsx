@@ -65,6 +65,15 @@ export default function ThankScanning() {
           <p className="text-gray-500 text-sm mb-3">Need immediate help? Call us directly</p>
           <a
             href="tel:+917397674330"
+            onClick={() => {
+              if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-18044684782/BcjICPSr75YcEO6TsJxD',
+                  'value': 1.0,
+                  'currency': 'INR'
+                });
+              }
+            }}
             className="inline-flex items-center gap-2 bg-[#e13e20] hover:bg-[#c1341a] text-white font-semibold text-sm sm:text-base px-6 py-3 rounded-full transition-colors shadow-md"
           >
             <svg
@@ -87,6 +96,27 @@ export default function ThankScanning() {
         </div>
       </main>
 
+      {/* Conversion tracking script */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                'send_to': 'AW-18044684782/BcjICPSr75YcEO6TsJxD',
+                'value': 1.0,
+                'currency': 'INR',
+                'event_callback': callback
+              });
+              return false;
+            }
+          `,
+        }}
+      />
     </div>
   );
 }
