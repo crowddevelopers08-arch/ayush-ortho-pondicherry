@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Manrope } from "next/font/google"
-import { GoogleAdsTag } from "@/components/google-ads-tag"
 import "./globals.css"
 
 const geist = Geist({
@@ -60,7 +59,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <GoogleAdsTag />
         {children}
       </body>
     </html>
