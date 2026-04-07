@@ -10,7 +10,7 @@ const ThankYouPageknee: React.FC = () => {
     // Google Ads conversion tracking for Knee Treatment
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag('event', 'conversion', {
-        'send_to': 'AW-16893156876/-GDQCNzQtawbEIy8pPc-'
+        'send_to': 'AW-18044684782/hcWvCLWHsJccEO6TsJxD'
       });
     }
   }, []);
