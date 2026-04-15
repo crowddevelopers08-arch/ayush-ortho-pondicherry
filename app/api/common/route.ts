@@ -230,10 +230,7 @@ async function updateLeadTelecrmStatus(leadId: string, telecrmId?: string, error
       where: { id: leadId },
       data: {
         telecrmSynced: !error,
-        telecrmId: telecrmId || null,
-        syncedAt: new Date(),
-        error: error || null,
-        status: error ? 'ERROR' : 'NEW'
+        telecrmId: telecrmId || null
       }
     });
   } catch (error) {
@@ -377,8 +374,7 @@ export async function POST(request: NextRequest) {
             source: data.source || 'https://www.ayushortho.in',
             formName: 'common',
             consent: data.consent || false,
-            status: 'ERROR',
-            error: error instanceof Error ? error.message : 'Unknown error',
+            status: 'NEW',
             telecrmSynced: false
           }
         });

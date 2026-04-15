@@ -120,7 +120,6 @@ const Backcommonfour: React.FC = () => {
                 width={240}
                 height={150}
                 className="rounded-lg sm:rounded-xl w-full h-auto object-cover"
-                layout="responsive"
               />
             </div>
             <p className="text-black max-[470px]:text-[14px] text-xs sm:text-sm md:text-base lg:text-[18px] leading-relaxed px-1">
@@ -140,7 +139,6 @@ const Backcommonfour: React.FC = () => {
                 width={240}
                 height={150}
                 className="rounded-lg sm:rounded-xl w-full h-auto object-cover"
-                layout="responsive"
               />
             </div>
             <p className="text-black max-[470px]:text-[14px] text-xs sm:text-sm md:text-base lg:text-[18px] leading-relaxed px-1">
@@ -160,7 +158,6 @@ const Backcommonfour: React.FC = () => {
                 width={240}
                 height={150}
                 className="rounded-lg sm:rounded-xl w-full h-auto object-cover"
-                layout="responsive"
               />
             </div>
             <p className="text-black max-[470px]:text-[14px] text-xs sm:text-sm md:text-base lg:text-[18px] leading-relaxed px-1">
@@ -180,7 +177,6 @@ const Backcommonfour: React.FC = () => {
                 width={240}
                 height={150}
                 className="rounded-lg sm:rounded-xl w-full h-auto object-cover"
-                layout="responsive"
               />
             </div>
             <p className="text-black max-[470px]:text-[14px] text-xs sm:text-sm md:text-base lg:text-[18px] leading-relaxed px-1">
@@ -200,7 +196,6 @@ const Backcommonfour: React.FC = () => {
                 width={240}
                 height={150}
                 className="rounded-lg sm:rounded-xl w-full h-auto object-cover"
-                layout="responsive"
               />
             </div>
             <p className="text-black max-[470px]:text-[14px] text-xs sm:text-sm md:text-base lg:text-[18px] leading-relaxed px-1">
@@ -220,7 +215,6 @@ const Backcommonfour: React.FC = () => {
                 width={240}
                 height={150}
                 className="rounded-lg sm:rounded-xl w-full h-auto object-cover"
-                layout="responsive"
               />
             </div>
             <p className="text-black text-xs max-[470px]:text-[14px] sm:text-sm md:text-base lg:text-[18px] leading-relaxed px-1">

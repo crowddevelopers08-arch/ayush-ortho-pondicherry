@@ -232,10 +232,7 @@ async function updateLeadTelecrmStatus(leadId: string, telecrmId?: string, error
       where: { id: leadId },
       data: {
         telecrmSynced: !error,
-        telecrmId: telecrmId || null,
-        syncedAt: new Date(),
-        error: error || null,
-        status: error ? 'ERROR' : 'NEW'
+        telecrmId: telecrmId || null
       }
     });
   } catch (error) {
@@ -317,7 +314,6 @@ export async function POST(request: NextRequest) {
       });
 
       telecrmId = telecrmResponse?.id || telecrmResponse?.leadId || null;
-      telecrmSynced = true;
 
       // Update database with TeleCRM sync status
       if (savedLead) {
@@ -380,8 +376,7 @@ export async function POST(request: NextRequest) {
             source: data.source || 'https://www.ayushortho.in/knee-treatments',
             formName: 'knee-pain',
             consent: data.consent || false,
-            status: 'ERROR',
-            error: error instanceof Error ? error.message : 'Unknown error',
+            status: 'NEW',
             telecrmSynced: false
           }
         });

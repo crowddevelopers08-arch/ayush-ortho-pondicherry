@@ -337,7 +337,6 @@ const Neckfour: React.FC = () => {
                     width={260}
                     height={160}
                     className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-110"
-                    layout="responsive"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
