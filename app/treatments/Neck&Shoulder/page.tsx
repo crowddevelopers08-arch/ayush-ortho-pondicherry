@@ -1,4 +1,3 @@
-
 import Commonfour from "@/components/commonfour"
 import Commonchatbot from "@/components/commonchatbot"
 import StackedScrollCards from "@/components/commonthird"
@@ -14,23 +13,60 @@ import Neckfour from "@/components/neckfour"
 import Neckfive from "@/components/neckfive"
 import Necksix from "@/components/necksix"
 import Neckvideo from "@/components/neckvideo"
+import Script from "next/script"
 
 export default function HomePage() {
   return (
     <>
-    <main className="min-h-screen">
-      <Neckheader />
-      <Neckhero />
-      <Neckthird />
-      <Neckfive />
-      <Necksix />
-      <Neckfour />
-      {/* <Neckvideo /> */}
-      <Neckreviews />
-      <NeckcombinedComponent />
-      <Neckfooter />
-      <Neckchatbot />
-    </main>
+      {/* Google Ads Script */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18044684782"
+        strategy="afterInteractive"
+      />
+      
+      {/* Google Analytics Initialization */}
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18044684782');
+        `}
+      </Script>
+
+      {/* Neck Pain Conversion Tracking Script */}
+      <Script id="conversion-tracking-neck" strategy="afterInteractive">
+        {`
+          function gtag_report_conversion(url) {
+            var callback = function () {
+              if (typeof(url) != 'undefined') {
+                window.location = url;
+              }
+            };
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18044684782/TpuGCJLQ0JwcEO6TsJxD',
+              'value': 1.0,
+              'currency': 'INR',
+              'event_callback': callback
+            });
+            return false;
+          }
+        `}
+      </Script>
+
+      <main className="min-h-screen">
+        <Neckheader />
+        <Neckhero />
+        <Neckthird />
+        <Neckfive />
+        <Necksix />
+        <Neckfour />
+        {/* <Neckvideo /> */}
+        <Neckreviews />
+        <NeckcombinedComponent />
+        <Neckfooter />
+        <Neckchatbot />
+      </main>
     </>
   )
 }
