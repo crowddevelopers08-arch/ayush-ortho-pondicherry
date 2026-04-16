@@ -18,14 +18,13 @@ import Script from "next/script"
 export default function HomePage() {
   return (
     <>
-      {/* Google Ads Script */}
+      {/* Google tag (gtag.js) */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=AW-18044684782"
         strategy="afterInteractive"
       />
       
-      {/* Google Analytics Initialization */}
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-tag" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
