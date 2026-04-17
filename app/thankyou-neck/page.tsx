@@ -7,13 +7,39 @@ import { Thankheader } from "@/components/thankheader";
 
 const ThankYouPageknee: React.FC = () => {
   useEffect(() => {
-    // Google Ads conversion tracking
+    // Google Ads conversion tracking for first tag
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag('event', 'conversion', {
         'send_to': 'AW-16893156876/JvrhCOmFtKwbEIy8pPc-'
       });
     }
+
+    // Second conversion tracking for AW-18044684782
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag('event', 'conversion', {
+        'send_to': 'AW-18044684782/TpuGCJLQ0JwcEO6TsJxD',
+        'value': 1.0,
+        'currency': 'INR'
+      });
+    }
   }, []);
+
+  // Function for button click conversion tracking
+  const handleConversionClick = (url?: string) => {
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag('event', 'conversion', {
+        'send_to': 'AW-18044684782/TpuGCJLQ0JwcEO6TsJxD',
+        'value': 1.0,
+        'currency': 'INR',
+        'event_callback': function() {
+          if (url) {
+            window.location.href = url;
+          }
+        }
+      });
+    }
+    return false;
+  };
 
   return (
     <>
@@ -80,6 +106,10 @@ const ThankYouPageknee: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4 mb-8">
           <a
             href="tel:+917397674330"
+            onClick={(e) => {
+              e.preventDefault();
+              handleConversionClick("tel:+917397674330");
+            }}
             className="inline-flex items-center gap-2 bg-[#e13e20] text-white px-6 py-3 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg"
           >
             <Phone className="w-5 h-5" />
@@ -87,6 +117,7 @@ const ThankYouPageknee: React.FC = () => {
           </a>
           <Link
             href="/treatments/Neck&Shoulder"
+            onClick={() => handleConversionClick("/treatments/Neck&Shoulder")}
             className="inline-flex items-center gap-2 bg-gray-800 text-white px-6 py-3 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg"
           >
             <Home className="w-5 h-5" />
