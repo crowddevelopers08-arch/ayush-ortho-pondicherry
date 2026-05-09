@@ -1,508 +1,153 @@
-﻿"use client"
+"use client";
 
-import { useState, useEffect, useRef } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Phone, Calendar, Shield, Star, Heart, ChevronLeft, ChevronRight } from "lucide-react"
-import { BackconsultationModal } from "./backpopupform"
-import gsap from "gsap"
-import { NeckConsultationModal } from "./neckpopup"
+import React, { useState } from "react";
+import { NeckConsultationModal } from "./neckpopup";
+
+const NECK_VIDEO_ID = "Vik-nVA6llw";
+const neckVideoSrc = `https://www.youtube.com/embed/${NECK_VIDEO_ID}?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1&controls=1&loop=1&playlist=${NECK_VIDEO_ID}`;
 
 export function Neckhero() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isConsultationOpen, setIsConsultationOpen] = useState(false)
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  
-  const marqueeRef = useRef(null)
-  const mobileCarouselRef = useRef(null)
-
-  const images = [
-    "https://ik.imagekit.io/aegfxmf0u/public/mainshlo.jpg",
-    "https://ik.imagekit.io/aegfxmf0u/public/sholbann.jpg",
-    "https://ik.imagekit.io/aegfxmf0u/public/thatha.jpg",
-  ];
-
-  useEffect(() => {
-    // GSAP Marquee Animation for Desktop
-    if (marqueeRef.current) {
-      const marquee = marqueeRef.current;
-      const content = marquee.querySelector('.marquee-content');
-      const contentWidth = content.scrollWidth;
-      const duration = 10;
-      
-      // Duplicate content for seamless loop
-      content.innerHTML += content.innerHTML;
-      
-      gsap.to(content, {
-        x: -contentWidth / 2,
-        duration: duration,
-        ease: "none",
-        repeat: -1,
-      });
-    }
-  }, [])
-
-  // Mobile carousel navigation
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  // Auto-advance carousel on mobile
-  useEffect(() => {
-    const carouselInterval = setInterval(() => {
-      if (window.innerWidth < 1024) { // Only on mobile
-        nextImage();
-      }
-    }, 4000); // Change image every 4 seconds
-
-    return () => clearInterval(carouselInterval);
-  }, []);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-        
-        @keyframes pulse-grow {
-          0% { transform: scale(1); }
-          50% { transform: scale(1.05); }
-          100% { transform: scale(1); }
-        }
-        
-        @keyframes slide-in {
-          0% { opacity: 0; transform: translateY(-10px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-          100% { transform: translateY(0px); }
-        }
-        
-        .btn-animation:hover {
-          animation: pulse-grow 0.5s ease-in-out;
-        }
-        
-        .mobile-menu-animation {
-          animation: slide-in 0.3s ease-out;
-        }
-        
-        .floating-element {
-          animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes pulse {
-          0%, 100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.05);
-          }
-        }
-        
-        @keyframes shimmer {
-          0% {
-            background-position: -200px 0;
-          }
-          100% {
-            background-position: calc(200px + 100%) 0;
-          }
-        }
-        
-        .animate-fade-in {
-          animation: fadeIn 0.3s ease-out;
-        }
-        
-        .animate-pulse-slow {
-          animation: pulse 2s ease-in-out infinite;
-        }
-        
-        .shimmer-effect {
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(234, 38, 41, 0.1),
-            transparent
-          );
-          background-size: 200px 100%;
-          animation: shimmer 2s infinite;
-        }
-        
-        .glass-morphism {
-          background: rgba(30, 30, 30, 0.98);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border-bottom: 1px solid rgba(234, 38, 41, 0.1);
-        }
-        
-        .phone-button {
-          position: relative;
-          overflow: hidden;
-          background: linear-gradient(135deg, #ea2629, #d61f22);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          box-shadow: 0 4px 15px rgba(234, 38, 41, 0.3);
-          transition: all 0.3s ease;
-        }
-        
-        .phone-button::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-          transition: left 0.5s ease;
-        }
-        
-        .phone-button:hover::before {
-          left: 100%;
-        }
-        
-        .phone-button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(234, 38, 41, 0.4);
-        }
-        
-        .consultation-button {
-          background: linear-gradient(135deg, #ea2629, #d61f22);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          box-shadow: 0 4px 15px rgba(234, 38, 41, 0.2);
-          position: relative;
-          overflow: hidden;
-          transition: all 0.3s ease;
-        }
-        
-        .consultation-button::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-          transform: translateX(-100%);
-          transition: transform 0.6s ease;
-        }
-        
-        .consultation-button:hover::after {
-          transform: translateX(100%);
-        }
-        
-        .consultation-button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(234, 38, 41, 0.3);
-        }
-        
-        /* Marquee Styles for Desktop */
-        .marquee-container {
-          width: 100%;
-          overflow: hidden;
-        }
-        
-        .marquee-content {
-          display: flex;
-          gap: 1.5rem;
-          padding: 2rem 0;
-        }
-        
-        .marquee-image {
-          flex-shrink: 0;
-          width: 15rem;
-          height: 20rem;
-          border-radius: 0.75rem;
-          overflow: hidden;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-          transition: all 0.3s ease;
-        }
-        
-        .marquee-image:hover {
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-          transform: translateY(-5px);
-        }
-        
-        .marquee-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.5s ease;
-        }
-        
-        .marquee-image:hover img {
-          transform: scale(1.05);
-        }
-        
-        /* Mobile Carousel Styles */
-        .mobile-carousel {
-          position: relative;
-          width: 100%;
-          height: 300px;
-          overflow: hidden;
-          border-radius: 0.75rem;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        .carousel-track {
-          display: flex;
-          transition: transform 0.5s ease-in-out;
-          height: 100%;
-        }
-        
-        .carousel-slide {
-          flex: 0 0 100%;
-          height: 100%;
-        }
-        
-        .carousel-slide img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-        
-        .carousel-nav {
-          position: absolute;
-          bottom: 1rem;
-          left: 0;
-          right: 0;
-          display: flex;
-          justify-content: center;
-          gap: 0.5rem;
-          z-index: 10;
-        }
-        
-        .carousel-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.5);
-          transition: all 0.3s ease;
-          cursor: pointer;
-        }
-        
-        .carousel-dot.active {
-          background: #e13e20;
-          transform: scale(1.2);
-        }
-        
-        .carousel-arrow {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          background: rgba(0, 0, 0, 0.5);
-          border: none;
-          color: white;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          z-index: 10;
-          transition: all 0.3s ease;
-        }
-        
-        .carousel-arrow:hover {
-          background: rgba(225, 62, 32, 0.8);
-        }
-        
-        .carousel-arrow.prev {
-          left: 1rem;
-        }
-        
-        .carousel-arrow.next {
-          right: 1rem;
-        }
-        
-        @media (min-width: 768px) {
-          .marquee-image {
-            width: 20rem;
-            height: 25rem;
-          }
-          
-          .mobile-carousel {
-            height: 400px;
-          }
-        }
-        
-        @media (min-width: 1024px) {
-          .mobile-carousel {
-            display: none;
-          }
-        }
       `}</style>
+      <div
+        className="relative bg-gradient-to-b from-gray-900 pt-[75px] to-black overflow-hidden overflow-x-hidden"
+        style={{ fontFamily: "'Outfit', sans-serif" }}
+      >
+        <div className="absolute inset-0 opacity-10">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          ></div>
+        </div>
 
-      {/* Hero Section with Marquee Animation */}
-      <section className="pt-16 min-h-[80vh] md:pt-24 lg:pt-32 pb-12 md:pb-16 lg:pb-20 bg-gradient-to-b from-gray-900 to-black px-4 sm:px-6 lg:px-8 overflow-x-hidden" style={{fontFamily: "'Outfit', sans-serif" }}>
-        <div className="container mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-10 md:gap-8 lg:gap-12 items-center">
-          {/* Content Section */}
-          <div className="text-white space-y-5 md:space-y-6 order-1 lg:order-1">
-            <h1 className="text-[40px] max-[470px]:text-[24px] max-[470px]:pt-[20px] max-[470px]:text-center sm:text-4xl md:text-5xl lg:text-[40px] font-bold leading-tight">
-              Shoulder & Neck Pain Relief at Ayush Ortho 
-              <span className="text-[#e13e20]"> – Puducherry</span>
-            </h1>
-            <div className="bg-gray-800 p-4 rounded-lg mb-6 max-[470px]:mb-10">
-              <p className="text-gray-300 italic  max-[470px]:text-center">
-                Is shoulder stiffness or neck pain limiting your daily life?
-              </p>
-            </div>
-                {/* Mobile Carousel Section */}
-          <div className="relative w-full order-2 lg:order-2 block lg:hidden mt-8">
-            <div className="mobile-carousel">
-              <div 
-                className="carousel-track"
-                style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
-              >
-                {images.map((image, index) => (
-                  <div key={index} className="carousel-slide">
-                    <img 
-                      src={image} 
-                      alt={`Gallery image ${index + 1}`}
+        <section className="relative z-10 pt-6 pb-16 max-[470px]:pb-6 md:pt-8 md:pb-20 px-6 md:px-8 lg:px-12">
+          <div className="container mx-auto">
+            <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-14">
+              <div className="lg:w-1/2 w-full">
+                <h2 className="text-[42px] max-[470px]:text-[22px] max-[470px]:text-center max-[470px]:mb-3 mb-6 font-bold text-white leading-tight">
+                  Shoulder &amp; Neck Pain Relief at <span className="text-orange-500">Ayush Ortho </span>- Puducherry
+                </h2>
+
+                <div className="bg-gray-800 p-4 rounded-lg mb-6 max-[470px]:mb-10">
+                  <p className="text-gray-300 italic max-[470px]:text-center">
+                    Is shoulder stiffness or neck pain limiting your daily life?
+                  </p>
+                </div>
+
+                <div className="lg:hidden w-full flex justify-center mb-6">
+                  <div className="relative w-full max-w-md">
+                    <div className="absolute -inset-3 bg-orange-500 rounded-2xl opacity-30 blur"></div>
+                    <iframe
+                      className="relative rounded-2xl shadow-2xl w-full h-64"
+                      src={neckVideoSrc}
+                      title="Neck and shoulder pain treatment video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
                     />
                   </div>
-                ))}
-              </div>
-              
-              {/* Navigation Arrows */}
-              <button 
-                className="carousel-arrow prev"
-                onClick={prevImage}
-                aria-label="Previous image"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              
-              <button 
-                className="carousel-arrow next"
-                onClick={nextImage}
-                aria-label="Next image"
-              >
-                <ChevronRight size={20} />
-              </button>
-              
-              {/* Dot Indicators */}
-              <div className="carousel-nav">
-                {images.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`carousel-dot ${index === currentImageIndex ? 'active' : ''}`}
-                    onClick={() => setCurrentImageIndex(index)}
-                    aria-label={`Go to image ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-            
-            {/* Progress indicators */}
-            <div className="flex items-center justify-center mt-4 space-x-4">
-              <div className="text-sm text-gray-400">
-                {currentImageIndex + 1} / {images.length}
-              </div>
-            </div>
-          </div>
-            <p className="text-base text-[19px] max-[470px]:text-center sm:text-lg md:text-[19px] text-gray-300 leading-relaxed">
-              Whether it's frozen shoulder, cervical spondylosis, or stiffness from long desk work, pain in the neck and shoulders can affect your sleep, posture, and mobility.
-            </p>
+                </div>
 
-            <div className="space-y-3 md:space-y-4">
-              <div className="flex items-start">
-                <div className="bg-[#e13e20] rounded-full p-2 mr-3 flex-shrink-0 mt-1">
-                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                </div>
-                <span className="text-base sm:text-lg">23,500+ Patients trust us with their care</span>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-[#e13e20] rounded-full p-2 mr-3 flex-shrink-0 mt-1">
-                  <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                </div>
-                <span className="text-base sm:text-lg">21 Specialities in musculoskeletal health</span>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-[#e13e20] rounded-full p-2 mr-3 flex-shrink-0 mt-1">
-                  <Star className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                </div>
-                <span className="text-base sm:text-lg">100+ Qualified Staff dedicated to your recovery</span>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-[#e13e20] rounded-full p-2 mr-3 flex-shrink-0 mt-1">
-                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                </div>
-                <span className="text-base sm:text-lg">16+ Years of Orthopaedic Expertise you can rely on</span>
-              </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
-              <a 
-                href="tel:+917397674330"
-                className="btn-animation flex items-center justify-center bg-[#e13e20] hover:bg-[#c03518] text-white font-medium py-3 px-5 sm:px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
-              >
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                <span className="font-semibold">Call Now</span>
-              </a>
-             
-              <button
-                onClick={() => setIsConsultationOpen(true)}
-                className="bg-transparent cursor-pointer hover:bg-[#e13e20] text-white border border-orange-500 hover:border-transparent text-center font-semibold py-3 px-5 sm:px-8 rounded-full transition-colors text-sm sm:text-base"
-              >
-                Book an Appointment
-              </button>
-            </div>
-          </div>
-          
-          {/* Marquee Animation Section for Desktop */}
-          <div className="relative w-full order-2 lg:order-2 hidden lg:block">
-            <div className="flex flex-col items-center justify-center overflow-hidden h-full">
-              <div 
-                ref={marqueeRef}
-                className="marquee-container"
-              >
-                <div className="marquee-content">
-                  {images.map((image, index) => (
-                    <div 
-                      key={index} 
-                      className="marquee-image"
-                    >
-                      <img 
-                        src={image} 
-                        alt={`Gallery image ${index + 1}`}
-                      />
+                <p className="text-gray-300 mb-6">
+                  Whether it&apos;s frozen shoulder, cervical spondylosis, or stiffness from long desk work, Ayush Ortho offers non-surgical care through Ayurveda, Varma Therapy, Orthopaedic Manual Therapy, and Chiropractic Care.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                  <div className="flex items-center">
+                    <div className="text-orange-500 mr-2">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                      </svg>
                     </div>
-                  ))}
+                    <span className="text-white">23,500+ Patients Treated</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="text-orange-500 mr-2">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <span className="text-white">21 Specialities in Musculoskeletal Health</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="text-orange-500 mr-2">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <span className="text-white">100+ Qualified Staff for Recovery Support</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="text-orange-500 mr-2">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <span className="text-white">16+ Years of Orthopaedic Expertise</span>
+                  </div>
                 </div>
+
+                <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
+                  <a
+                    href="tel:+917397674330"
+                    className="bg-[#e13e20] text-white text-center font-semibold py-3 px-8 rounded-full transition-colors"
+                    style={{ backgroundColor: "#e13e20" }}
+                  >
+                    Call Now
+                  </a>
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="bg-transparent cursor-pointer hover:bg-[#e13e20] text-white border border-orange-500 hover:border-transparent text-center font-semibold py-3 px-8 rounded-full transition-colors"
+                  >
+                    Book an Appointment
+                  </button>
+                </div>
+
+                <p className="text-orange-200 max-[325px]:text-[12px] max-[470px]:text-center mt-6 text-sm">
+                  Personalized care for frozen shoulder, cervical pain, and posture-related stiffness
+                </p>
               </div>
-              
-              {/* Progress indicators */}
-              <div className="flex items-center justify-end mt-4 space-x-4">
-                <div className="w-16 h-1 rounded-full bg-[#e13e20]"></div>
-                <div className="w-16 h-1 rounded-full bg-gray-600"></div>
+
+              <div className="hidden lg:block lg:w-1/2 w-full flex justify-center lg:pr-0">
+                <div className="relative w-full">
+                  <div className="absolute -inset-4 bg-orange-500 rounded-2xl opacity-30 blur"></div>
+                  <iframe
+                    className="relative rounded-2xl shadow-2xl w-full h-[28rem]"
+                    src={neckVideoSrc}
+                    title="Neck and shoulder pain treatment video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
               </div>
             </div>
           </div>
 
-      
-        </div>
-      </section>
+          <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+            <svg
+              viewBox="0 0 1200 120"
+              preserveAspectRatio="none"
+              className="relative block w-full h-10 md:h-20 max-[470px]:hidden lg:h-14"
+            >
+              <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V56.44Z"
+                className="fill-current text-gray-800"
+              ></path>
+            </svg>
+          </div>
+        </section>
 
-      <NeckConsultationModal isOpen={isConsultationOpen} onClose={() => setIsConsultationOpen(false)} />
+        <NeckConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      </div>
     </>
-  )
+  );
 }

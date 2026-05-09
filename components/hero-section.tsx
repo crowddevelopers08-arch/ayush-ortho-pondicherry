@@ -1,6 +1,10 @@
-﻿"use client";
-import React, { useState } from 'react';// Adjust the import path as needed
+"use client";
+
+import React, { useState } from 'react';
 import { ConsultationModal } from './popupform';
+
+const KNEE_VIDEO_ID = "proosOnm6eA";
+const kneeVideoSrc = `https://www.youtube.com/embed/${KNEE_VIDEO_ID}?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1&controls=1&loop=1&playlist=${KNEE_VIDEO_ID}`;
 
 const AyushOrtho = () => {        
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,18 +15,15 @@ const AyushOrtho = () => {
       @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
       `}</style>
         <div className="relative bg-gradient-to-b from-gray-900 pt-[75px] to-black overflow-hidden overflow-x-hidden" style={{fontFamily: "'Outfit', sans-serif" }}>
-            {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
                 <div className="absolute inset-0" style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
                 }}></div>
             </div>
             
-            {/* Hero Section */}
             <section className="relative z-10 pt-6 pb-16 max-[470px]:pb-6 md:pt-8 md:pb-20 px-6 md:px-8 lg:px-12">
                 <div className="container mx-auto">
                     <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-14">
-                        {/* Content Section */}
                         <div className="lg:w-1/2 w-full">
                             <h2 className="text-[42px] max-[470px]:text-[22px] max-[470px]:text-center max-[470px]:mb-3 mb-6 font-bold text-white leading-tight">
                                 Knee Pain Relief at <span className="text-orange-500">Ayush Ortho </span>– Puducherry
@@ -34,13 +35,17 @@ const AyushOrtho = () => {
                                 </p>
                             </div>
                             
-                            {/* Mobile Image - Shown after the paragraph on mobile */}
                             <div className="lg:hidden w-full flex justify-center mb-6">
                                 <div className="relative w-full max-w-md">
                                     <div className="absolute -inset-3 bg-orange-500 rounded-2xl opacity-30 blur"></div>
-                                    <video autoPlay loop muted playsInline className="relative rounded-2xl shadow-2xl w-full h-64 object-cover">
-                                      <source src="/knee%20pain.mov" type="video/mp4" />
-                                    </video>
+                                    <iframe
+                                        className="relative rounded-2xl shadow-2xl w-full h-64"
+                                        src={kneeVideoSrc}
+                                        title="Knee pain treatment video"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    />
                                 </div>
                             </div>
                             
@@ -120,19 +125,22 @@ const AyushOrtho = () => {
                             </p>
                         </div>
 
-                        {/* Image Section - Hidden on mobile, shown on desktop */}
                         <div className="hidden lg:block lg:w-1/2 w-full flex justify-center lg:pr-0">
                             <div className="relative w-full">
                                 <div className="absolute -inset-4 bg-orange-500 rounded-2xl opacity-30 blur"></div>
-                                <video autoPlay loop muted playsInline className="relative rounded-2xl shadow-2xl w-full h-[28rem] object-cover">
-                                  <source src="/knee%20pain.mov" type="video/mp4" />
-                                </video>
+                                <iframe
+                                    className="relative rounded-2xl shadow-2xl w-full h-[28rem]"
+                                    src={kneeVideoSrc}
+                                    title="Knee pain treatment video"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Improved Professional Wave Design */}
                 <div className="absolute bottom-0 left-0 w-full overflow-hidden">
                     <svg 
                         viewBox="0 0 1200 120" 
@@ -147,7 +155,6 @@ const AyushOrtho = () => {
                 </div>
             </section>
 
-            {/* Consultation Modal */}
             <ConsultationModal 
                 isOpen={isModalOpen} 
                 onClose={() => setIsModalOpen(false)} 
