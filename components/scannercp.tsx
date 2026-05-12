@@ -310,7 +310,7 @@ const ScannerForm: React.FC = () => {
                   Vinoba nagar, Saram, Puducherry, Tamil Nadu 605008
                 </p>
                 <p className="text-gray-500 text-xs">
-                  📞 <a href="tel:+917397674330" className="text-orange-500 font-medium">+91 73976 74330</a>
+                  📞 <a href="tel:+919150900387" className="text-orange-500 font-medium">+91 91509 00387</a>
                 </p>
               </div>
             </form>

@@ -9,7 +9,7 @@ const CombinedComponent: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleCall = () => {
-    window.location.href = 'tel:+917397674330';
+    window.location.href = 'tel:+919150900387';
   };
 
   const handleOpenModal = () => {
@@ -81,7 +81,7 @@ const CombinedComponent: React.FC = () => {
                     <div className="w-5 h-5 sm:w-6 sm:h-6 mr-3 flex-shrink-0 text-[#e13e20]">
                       <Phone className="w-full h-full" />
                     </div>
-                    <p className="text-sm sm:text-base md:text-lg">+91 73976 74330</p>
+                    <p className="text-sm sm:text-base md:text-lg">+91 91509 00387</p>
                   </div>
                   
                   <div className="flex items-center justify-center">

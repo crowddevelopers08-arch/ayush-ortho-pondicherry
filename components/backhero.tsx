@@ -3,8 +3,7 @@
 import React, { useState } from "react";
 import { BackconsultationModal } from "./backpopupform";
 
-const BACK_VIDEO_ID = "W7WCGwXg3i0";
-const backVideoSrc = `https://www.youtube.com/embed/${BACK_VIDEO_ID}?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1&controls=1&loop=1&playlist=${BACK_VIDEO_ID}`;
+const backVideoSrc = "/back%20pain.mov";
 
 export function Backhero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,13 +44,15 @@ export function Backhero() {
                 <div className="lg:hidden w-full flex justify-center mb-6">
                   <div className="relative w-full max-w-md">
                     <div className="absolute -inset-3 bg-orange-500 rounded-2xl opacity-30 blur"></div>
-                    <iframe
-                      className="relative rounded-2xl shadow-2xl w-full h-64"
+                    <video
+                      className="relative rounded-2xl shadow-2xl w-full h-64 object-cover bg-black"
                       src={backVideoSrc}
-                      title="Back pain treatment video"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      controls
+                      preload="metadata"
                     />
                   </div>
                 </div>
@@ -97,7 +98,7 @@ export function Backhero() {
 
                 <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
                   <a
-                    href="tel:+917397674330"
+                    href="tel:+919150900387"
                     className="bg-[#e13e20] text-white text-center font-semibold py-3 px-8 rounded-full transition-colors"
                     style={{ backgroundColor: "#e13e20" }}
                   >
@@ -119,13 +120,15 @@ export function Backhero() {
               <div className="hidden lg:block lg:w-1/2 w-full flex justify-center lg:pr-0">
                 <div className="relative w-full">
                   <div className="absolute -inset-4 bg-orange-500 rounded-2xl opacity-30 blur"></div>
-                  <iframe
-                    className="relative rounded-2xl shadow-2xl w-full h-[28rem]"
+                  <video
+                    className="relative rounded-2xl shadow-2xl w-full h-[28rem] object-cover bg-black"
                     src={backVideoSrc}
-                    title="Back pain treatment video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                    preload="metadata"
                   />
                 </div>
               </div>

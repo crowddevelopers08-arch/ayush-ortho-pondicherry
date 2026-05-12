@@ -106,7 +106,7 @@ const AyushOrtho = () => {
 
                             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
                                 <a
-                                    href="tel:+917397674330"
+                                    href="tel:+919150900387"
                                     className="bg-[#e13e20] text-white text-center font-semibold py-3 px-8 rounded-full transition-colors"
                                     style={{ backgroundColor: '#e13e20' }}
                                 >

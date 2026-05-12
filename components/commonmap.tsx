@@ -17,7 +17,7 @@ const Commonmap: React.FC = () => {
         <div className="flex w-full bg-[#1a1a1a] border-t border-gray-800 shadow-lg">
           {/* Call Now Button */}
           <a
-            href="tel:+917397674330"
+            href="tel:+919150900387"
             className="flex-1 flex items-center justify-center py-4 px-2 text-center transition-colors duration-300 active:bg-[#333333] hover:bg-[#333333]"
           >
             <Phone className="w-5 h-5 text-white mr-2" />
@@ -61,13 +61,13 @@ const Commonmap: React.FC = () => {
         <div className="flex flex-col items-center justify-center gap-3 md:gap-4 mb-6 md:mb-8">
           {/* Phone with clickable link */}
           <a
-            href="tel:+917397674330"
+            href="tel:+919150900387"
             className="flex items-center gap-2 hover:opacity-80 transition-opacity group"
           >
             <div className="bg-white/10 p-2 rounded-full group-hover:bg-white/20 transition-colors">
               <Phone className="w-4 h-4 text-white" />
             </div>
-            <span className="text-sm text-white md:text-base font-medium">+91 73976 74330</span>
+            <span className="text-sm text-white md:text-base font-medium">+91 91509 00387</span>
           </a>
 
           {/* Address */}

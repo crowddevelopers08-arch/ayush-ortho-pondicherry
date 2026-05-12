@@ -9,7 +9,6 @@ import Backsix from "@/components/backsix"
 import WhatSetsUsApart from "@/components/WhatSetsUsApart"
 import { Backfooter } from "@/components/backfooter"
 import Backchatbot from "@/components/backchatbot"
-import Backvideo from "@/components/backvideo"
 import Script from "next/script"
 
 export default function HomePage() {
