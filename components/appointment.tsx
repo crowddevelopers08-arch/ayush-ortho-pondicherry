@@ -86,11 +86,6 @@ const AppointmentBanner: React.FC = () => {
               </svg>
               Call Now
             </button>
-            
-            {/* Additional info for mobile */}
-            <div className="lg:hidden text-center text-sm text-gray-300 mt-2">
-              <p>Free consultation for senior citizens every Thursday</p>
-            </div>
           </div>
         </div>
         

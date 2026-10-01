@@ -109,11 +109,6 @@ const BackcombinedComponent: React.FC = () => {
                   <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                   Call Now: +91 91509 00387
                 </button>
-                
-                {/* Additional info */}
-                {/* <div className="text-center text-sm text-gray-300 mt-2">
-                  <p>✨ Free consultation for senior citizens every Thursday</p>
-                </div> */}
               </div>
             </div>
             

@@ -151,11 +151,8 @@ const KneePainTreatment: React.FC = () => {
             <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">
               Senior Citizens (65+)
             </h3>
-            <p className="text-gray-700 mb-3 sm:mb-4 font-medium text-sm sm:text-base">
+            <p className="text-gray-700 font-medium text-sm sm:text-base">
               Facing arthritis, gout, or chronic stiffness?
-            </p>
-            <p className="font-bold text-[#e13e20] text-base sm:text-lg">
-              Special Benefit: Free Consultation every Thursday
             </p>
           </div>
         </div>
