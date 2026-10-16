@@ -3,7 +3,7 @@
 import { ChevronDown, Loader2, Lock } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { THANK_YOU_PATH, THANK_YOU_STORAGE_KEY, branches, painConcerns } from "./data";
+import { THANK_YOU_PATH, THANK_YOU_STORAGE_KEY, painConcerns } from "./data";
 
 type Status = "idle" | "submitting" | "paying" | "verifying" | "redirecting" | "error";
 
@@ -36,8 +36,6 @@ const busyLabels: Partial<Record<Status, string>> = {
   verifying: "Confirming payment…",
   redirecting: "Redirecting…",
 };
-
-const branchNames = branches.map((b) => b.name);
 
 const labelClass = "mb-1.5 block text-[10px] font-bold tracking-[.16em] text-white uppercase";
 const fieldClass =
@@ -89,7 +87,7 @@ function SelectField({
 // `bookingFee` (rupees) comes from the server env. When it is null, the form only
 // saves the lead, as before; otherwise the visitor pays it via Razorpay to confirm.
 export default function BookingForm({ bookingFee }: { bookingFee: number | null }) {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", painConcern: "", branch: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", painConcern: "" });
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
   // Kept after the lead is saved so a cancelled payment can be retried without a duplicate lead.
@@ -105,7 +103,7 @@ export default function BookingForm({ bookingFee }: { bookingFee: number | null 
     try {
       sessionStorage.setItem(
         THANK_YOU_STORAGE_KEY,
-        JSON.stringify({ name: form.name.trim(), branch: form.branch, paymentId: paymentId ?? "" }),
+        JSON.stringify({ name: form.name.trim(), paymentId: paymentId ?? "" }),
       );
     } catch {
       // Storage blocked (private mode) — the thank-you page falls back to a generic message.
@@ -185,7 +183,6 @@ export default function BookingForm({ bookingFee }: { bookingFee: number | null 
     if (!EMAIL_PATTERN.test(form.email.trim())) return setError("Please enter a valid email address.");
     if (!/^[6-9]\d{9}$/.test(form.phone)) return setError("Please enter a valid 10-digit mobile number.");
     if (!form.painConcern) return setError("Please select your pain concern.");
-    if (!form.branch) return setError("Please select your preferred branch.");
 
     try {
       let id = leadId;
@@ -215,10 +212,10 @@ export default function BookingForm({ bookingFee }: { bookingFee: number | null 
   return (
     <div id="book-appointment" className="scroll-mt-6 rounded-[1.5rem] bg-[#142544] p-5 shadow-[0_24px_60px_rgba(20,37,68,.28)] sm:p-7 lg:p-8">
         <form onSubmit={handleSubmit} noValidate>
-          <h3 className="mb-5 text-center text-lg leading-tight font-extrabold text-white sm:mb-6 sm:text-2xl">Book Your Appointment</h3>
+          <h3 className="mb-5 text-center text-lg leading-tight font-extrabold text-white sm:mb-6 sm:text-2xl">Book Your Appointment in Puducherry</h3>
 
           {/* Stacked on phones, 2 per row on tablets, 3 on laptops, all in one row on wide screens. */}
-          <div className="grid grid-cols-1 items-end gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-6">
+          <div className="grid grid-cols-1 items-end gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-5">
             <div>
               <label htmlFor="pain-name" className={labelClass}>
                 Name
@@ -281,14 +278,6 @@ export default function BookingForm({ bookingFee }: { bookingFee: number | null 
               value={form.painConcern}
               placeholder="Pain concern"
               options={painConcerns}
-              onChange={handleChange}
-            />
-            <SelectField
-              label="Branch"
-              name="branch"
-              value={form.branch}
-              placeholder="Nearest branch"
-              options={branchNames}
               onChange={handleChange}
             />
 

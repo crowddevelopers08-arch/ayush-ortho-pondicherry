@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { createdOnStamp, postToTeleCRM } from "@/lib/telecrm";
-import { branches, painConcerns } from "@/components/pain/data";
+import { painConcerns } from "@/components/pain/data";
 
 const FORM_NAME = "pain";
 const DEFAULT_SOURCE = "https://www.ayushortho.in/pain";
-const branchNames = branches.map((b) => b.name);
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 interface PainLeadData {
@@ -13,7 +12,6 @@ interface PainLeadData {
   email: string;
   phone: string;
   painConcern: string;
-  branch: string;
   source: string;
 }
 
@@ -24,7 +22,7 @@ async function sendToTeleCRM(lead: PainLeadData) {
       name: lead.name,
       email: lead.email,
       phone: lead.phone,
-      city_1: lead.branch,
+      city_1: "",
       Country: "",
       LeadID: "",
       CreatedOn: createdOnStamp(),
@@ -45,12 +43,11 @@ async function sendToTeleCRM(lead: PainLeadData) {
       { type: "SYSTEM_NOTE", text: `Form Name: ${FORM_NAME}` },
       {
         type: "SYSTEM_NOTE",
-        text: `Complete Form Data: Name: ${lead.name} | Email: ${lead.email} | Phone: ${lead.phone} | Pain Concern: ${lead.painConcern} | Branch: ${lead.branch} | Source URL: ${lead.source}`,
+        text: `Complete Form Data: Name: ${lead.name} | Email: ${lead.email} | Phone: ${lead.phone} | Pain Concern: ${lead.painConcern} | Source URL: ${lead.source}`,
       },
       { type: "SYSTEM_NOTE", text: `Lead Source URL: ${lead.source}` },
       { type: "SYSTEM_NOTE", text: `Area of Pain: ${lead.painConcern}` },
       { type: "SYSTEM_NOTE", text: `Email: ${lead.email}` },
-      { type: "SYSTEM_NOTE", text: `Preferred Branch: ${lead.branch}` },
     ],
   };
 
@@ -70,7 +67,6 @@ export async function POST(request: NextRequest) {
       email: readField("email").toLowerCase().slice(0, 120),
       phone: readField("phone").replace(/\D/g, ""),
       painConcern: readField("painConcern"),
-      branch: readField("branch"),
       source: readField("source") || request.headers.get("referer") || DEFAULT_SOURCE,
     };
 
@@ -80,8 +76,8 @@ export async function POST(request: NextRequest) {
     if (!EMAIL_PATTERN.test(leadData.email)) {
       return NextResponse.json({ error: "Please enter a valid email address" }, { status: 400 });
     }
-    if (!painConcerns.includes(leadData.painConcern) || !branchNames.includes(leadData.branch)) {
-      return NextResponse.json({ error: "Please select your pain concern and branch" }, { status: 400 });
+    if (!painConcerns.includes(leadData.painConcern)) {
+      return NextResponse.json({ error: "Please select your pain concern" }, { status: 400 });
     }
 
     const savedLead = await prisma.lead.create({
@@ -92,8 +88,6 @@ export async function POST(request: NextRequest) {
         age: "",
         areaOfPain: leadData.painConcern,
         treatmentPlan: "",
-        // The leads table has no branch column; `city` holds the preferred branch.
-        city: leadData.branch,
         source: leadData.source,
         formName: FORM_NAME,
         consent: false,

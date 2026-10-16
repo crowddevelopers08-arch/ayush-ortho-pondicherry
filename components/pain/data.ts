@@ -105,11 +105,11 @@ export const treatmentPlans = [
   },
 ];
 
-// Patient videos already published on the clinic's YouTube channel.
 // Vertical (9:16) patient testimonials on Cloudinary. The poster is the same file
 // with a .jpg extension, which Cloudinary renders from the frame at 1s.
-const CLOUDINARY_VIDEO = "https://res.cloudinary.com/dzonmuzpx/video/upload";
-const testimonialVideo = (version: string, path: string, name: string, concern: string) => ({
+// `name` and `concern` label the card; leave them empty to hide the label.
+const CLOUDINARY_VIDEO = "https://res.cloudinary.com/reola0od/video/upload";
+const testimonialVideo = (version: string, path: string, name = "", concern = "") => ({
   src: `${CLOUDINARY_VIDEO}/${version}/${path}.mp4`,
   poster: `${CLOUDINARY_VIDEO}/so_1,w_720,q_auto/${version}/${path}.jpg`,
   name,
@@ -117,24 +117,9 @@ const testimonialVideo = (version: string, path: string, name: string, concern: 
 });
 
 export const patientVideos = [
-  testimonialVideo(
-    "v1791464879",
-    "testimonial_-_1-_v4l8rs",
-    "P. Ramesh",
-    "Knee Pain",
-  ),
-  testimonialVideo(
-    "v1791464879",
-    "testimonial_-_2_jso64y",
-    "R. Vaishnavi",
-    "Disc Bulge",
-  ),
-  testimonialVideo(
-    "v1791464880",
-    "testimonila_sep_1_vwbpdi",
-    "Kesavan",
-    "Joint Pain",
-  ),
+  testimonialVideo("v1792147709", "video_-12"),
+  testimonialVideo("v1792147713", "video_-_13"),
+  testimonialVideo("v1792147710", "pondi_mp4"),
 ];
 
 export const branches = [

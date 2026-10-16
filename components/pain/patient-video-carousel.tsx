@@ -153,7 +153,7 @@ export default function PatientVideoCarousel() {
       <div className="relative mx-auto aspect-[9/16] w-[230px] sm:w-[300px]">
         {patientVideos.map((video, i) => {
           const slot = slotFor(i, active, count);
-          const label = `${video.name} – ${video.concern}`;
+          const label = [video.name, video.concern].filter(Boolean).join(" – ") || `Patient story ${i + 1}`;
           return (
             <div
               key={video.src}
@@ -210,8 +210,10 @@ export default function PatientVideoCarousel() {
                   )}
 
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/45 to-transparent px-3 pt-12 pb-3">
-                    <p className="text-[15px] leading-tight font-semibold text-white">{video.name}</p>
-                    <p className="mt-0.5 text-[11px] font-medium tracking-[1px] text-[#ff8a70] uppercase">{video.concern}</p>
+                    {video.name && <p className="text-[15px] leading-tight font-semibold text-white">{video.name}</p>}
+                    {video.concern && (
+                      <p className="mt-0.5 text-[11px] font-medium tracking-[1px] text-[#ff8a70] uppercase">{video.concern}</p>
+                    )}
 
                     <input
                       type="range"
@@ -221,7 +223,7 @@ export default function PatientVideoCarousel() {
                       value={Math.min(time, duration || 0)}
                       onChange={(e) => seek(Number(e.target.value))}
                       aria-label="Seek video"
-                      className="mt-2.5 h-1 w-full cursor-pointer accent-[#e13e20]"
+                      className={`${video.name || video.concern ? "mt-2.5" : ""} h-1 w-full cursor-pointer accent-[#e13e20]`}
                     />
 
                     <div className="mt-2 flex items-center gap-2">

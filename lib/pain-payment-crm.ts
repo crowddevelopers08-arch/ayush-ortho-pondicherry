@@ -83,7 +83,6 @@ function crmPayload(p: FullPayment) {
     typeof p.fee === "number" && `Razorpay Fee: ${p.currency} ${paiseToRupees(p.fee)}${typeof p.tax === "number" ? ` (incl. GST ${paiseToRupees(p.tax)})` : ""}`,
     !paid && p.error_description && `Failure Reason: ${p.error_description}`,
     `Pain Concern: ${notes.painConcern || "Not specified"}`,
-    `Preferred Branch: ${notes.branch || "Not specified"}`,
     `Lead Source: ${notes.source || "Not specified"}`,
   ].filter(Boolean) as string[];
 
@@ -93,7 +92,7 @@ function crmPayload(p: FullPayment) {
       name: notes.name || "Razorpay customer",
       email,
       phone,
-      city_1: notes.branch || "",
+      city_1: "",
       Country: "India",
       LeadID: "",
       CreatedOn: createdOnStamp(),

@@ -51,7 +51,6 @@ export async function POST(req: NextRequest) {
           email: lead.email,
           phone: lead.phone,
           painConcern: lead.areaOfPain ?? "",
-          branch: lead.city ?? "",
           source: (lead.source ?? "").slice(0, 200),
         },
       }),
